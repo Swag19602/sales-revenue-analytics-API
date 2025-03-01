@@ -1,0 +1,52 @@
+# Fetch customer spending
+query {
+  getCustomerSpending(customerId: "63f8b3d5a7b1d7f3b0a2c5e1") {
+    customerId
+    totalSpent
+    averageOrderValue
+    lastOrderDate
+  }
+}
+
+# Fetch top-selling products
+query {
+  getTopSellingProducts(limit: 5) {
+    productId
+    name
+    totalSold
+  }
+}
+
+# Fetch sales analytics with date range
+query {
+  getSalesAnalytics(startDate: "2024-01-01", endDate: "2024-02-29") {
+    totalRevenue
+    completedOrders
+    categoryBreakdown {
+      category
+      revenue
+    }
+  }
+}
+
+# Place an order
+mutation {
+  placeOrder(
+    customerId: "63f8b3d5a7b1d7f3b0a2c5e1"
+    products: [{ productId: "63f8b3d5a7b1d7f3b0a2c5e5", quantity: 2 }]
+  ) {
+    success
+    message
+    orderId
+  }
+}
+
+# Fetch paginated customer orders
+query {
+  getCustomerOrders(customerId: "63f8b3d5a7b1d7f3b0a2c5e1", page: 1, limit: 5) {
+    _id
+    totalAmount
+    orderDate
+    status
+  }
+}
