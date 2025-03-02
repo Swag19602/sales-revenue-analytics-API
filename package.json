@@ -14,8 +14,10 @@
   "description": "",
   "dependencies": {
     "apollo-server-express": "^3.13.0",
+    "csv-parser": "^3.2.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "fs": "^0.0.1-security",
     "graphql": "^16.10.0",
     "mongoose": "^8.11.0",
     "nodemon": "^3.1.9"

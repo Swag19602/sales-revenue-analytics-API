@@ -1,1 +1,1 @@
-export const DB_NAME = "sales-analytics";
+export const DB_NAME = "sales_analytics";

@@ -14,3 +14,18 @@
         - Paginated Customer Orders: Fetch customer orders with pagination support.
 
         - Redis Caching: Sales analytics queries are cached to improve performance.
+
+# Technology Used
+    - ✅ Node.js
+    - ✅ Express.js
+    - ✅ MongoDB & Mongoose
+    - ✅ Apollo Server
+    - ✅ GraphQL
+    - ✅ Postman
+
+# Performance Optimisation
+    - Indexes added on customerId and productId fields for efficient lookups.
+    - Aggregation Pipelines used for queries like getSalesAnalytics to enhance performance.
+
+# POSTMAN API DOCUMENTATION
+ - https://documenter.getpostman.com/view/26867551/2sAYdimUAo

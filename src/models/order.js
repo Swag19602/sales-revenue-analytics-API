@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-  customerId: mongoose.Schema.Types.ObjectId,
+  _id: String,
+  customerId: String,
   products: [
     {
-      productId: mongoose.Schema.Types.ObjectId,
+      productId: String,
       quantity: Number,
       priceAtPurchase: Number,
     },

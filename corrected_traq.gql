@@ -1,0 +1,63 @@
+# GraphQL Queries for Testing in Postman
+
+# Get Customer Spending
+query getCustomerSpending($customerId: ID!) {
+  getCustomerSpending(customerId: $customerId) {
+    customerId
+    totalSpent
+    averageOrderValue
+    lastOrderDate
+  }
+}
+
+# Get Top Selling Products
+query getTopSellingProducts($limit: Int!) {
+  getTopSellingProducts(limit: $limit) {
+    productId
+    name
+    totalSold
+  }
+}
+
+# Get Sales Analytics
+query getSalesAnalytics($startDate: String!, $endDate: String!) {
+  getSalesAnalytics(startDate: $startDate, endDate: $endDate) {
+    totalRevenue
+    completedOrders
+    categoryBreakdown {
+      category
+      revenue
+    }
+  }
+}
+
+# Get Customer Orders (with Pagination)
+query getCustomerOrders($customerId: ID!, $limit: Int!, $offset: Int!) {
+  getCustomerOrders(customerId: $customerId, limit: $limit, offset: $offset) {
+    orderId
+    products {
+      productId
+      quantity
+      priceAtPurchase
+    }
+    totalAmount
+    orderDate
+    status
+  }
+}
+
+# Place a New Order (Mutation)
+mutation placeOrder($customerId: ID!, $products: [OrderProductInput!]!) {
+  placeOrder(customerId: $customerId, products: $products) {
+    orderId
+    customerId
+    products {
+      productId
+      quantity
+      priceAtPurchase
+    }
+    totalAmount
+    orderDate
+    status
+  }
+}
